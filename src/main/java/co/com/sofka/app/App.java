@@ -22,11 +22,11 @@ public class App {
         System.out.println( "Enter number 2: " );
         String textNumber2 = bufferedReader.readLine();
 
-        Long number1 = Long.valueOf( textNumber1 );
-        Long number2 = Long.valueOf( textNumber2 );
+       int number1 = Integer.valueOf( textNumber1 );
+       int number2 = Integer.valueOf( textNumber2 );
 
         BasicCalculator calculator = new BasicCalculator();
-        Long result = calculator.suma( number1, number2 );
+        int result = calculator.suma( number1, number2 );
 
         System.out.println( number1 + " + " + number2 + " = " + result );
     }

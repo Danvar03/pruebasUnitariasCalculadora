@@ -6,11 +6,11 @@ import org.slf4j.LoggerFactory;
 public class BasicCalculator {
     private static final Logger logger = LoggerFactory.getLogger(BasicCalculator.class);
 
-    public Long suma(Long number1, Long number2) {
+    public int suma(int number1, int number2) {
         logger.info( "Summing {} + {}", number1, number2 );
         return number1 + number2;
     }
-    public Double resta(Double number1, Double number2) {
+    public int resta(int number1, int number2) {
         logger.info( "Summing {} - {}", number1, number2 );
         return number1 - number2;
     }
@@ -23,7 +23,7 @@ public class BasicCalculator {
             }
             return number1 / number2;
         }
-    public Long multiplicacion(Long number1, Long number2) {
+    public int multiplicacion(int number1, int number2) {
         logger.info( "Summing {} * {}", number1, number2 );
         return number1 * number2;
     }

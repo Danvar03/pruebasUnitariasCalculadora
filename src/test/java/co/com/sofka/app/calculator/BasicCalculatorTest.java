@@ -30,12 +30,12 @@ public class BasicCalculatorTest {
     @DisplayName("Testing sum: 1-1=0")
     public void resta() {
         // Arrange
-        Long number1 = 1L;
-        Long number2 = 1L;
-        Long expectedValue = 0L;
+        Double number1 = Double.valueOf(1L);
+        Double number2 = Double.valueOf(1L);
+        Double expectedValue = Double.valueOf(0);
 
         // Act
-        Long result = basicCalculator.resta(number1, number2);
+        Double result = basicCalculator.resta(number1, number2);
 
         // Assert
         assertEquals(expectedValue, result);
@@ -71,7 +71,7 @@ public class BasicCalculatorTest {
         assertEquals(expectedValue, result);
 
     }
-    @DisplayName("Testing several sums")
+    @DisplayName("Testing Varios Casos Suma")
     @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
             "0,    1,   1",
@@ -79,8 +79,25 @@ public class BasicCalculatorTest {
             "49,  51, 100",
             "1,  100, 101"
     })
-    public void severalSums(Long first, Long second, Long expectedResult) {
-        assertEquals(expectedResult, basicCalculator.suma(first, second),
-                () -> first + " + " + second + " should equal " + expectedResult);
+    public void severaluma(Long number1, Long number2, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.suma(number1, number2),
+                () -> number1 + " + " + number2 + " should equal " + expectedResult);
     }
+
+    //Caso Resta
+    @DisplayName("Testing Varios Casos Resta")
+    @ParameterizedTest(name = "{0} - {1} = {2}")
+    @CsvSource({
+            "1,   0,   1",
+            "1,   2,  -1",
+            "51,  49, 2",
+            "100,  1, 99"
+    })
+    public void severalresta(Double number1, Double number2, Double expectedResult) {
+        assertEquals(expectedResult, basicCalculator.resta(number1, number2),
+                () -> number1 + " + " + number2 + " should equal " + expectedResult);
+    }
+
+
 }
+
